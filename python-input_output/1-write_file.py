@@ -1,11 +1,15 @@
 #!/usr/bin/python3
-""" Module that returns number of lines """
+
+"""
+Handles writing a string to a specified file
+"""
 
 
-def number_of_lines(filename=""):
-    """ number_of_lines - returns number of lines in .txt """
-    line_count = 0
-    with open(filename, encoding='utf-8') as a_file:
-        for i in a_file:
-            line_count += 1
-    return line_count
+def write_file(filename="", text=""):
+    """
+    Handles writing data to a file
+    """
+
+    with open(filename, "w", encoding="utf-8") as file:
+        file.write(text)
+        return len(text)
